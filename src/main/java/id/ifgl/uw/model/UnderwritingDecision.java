@@ -1,10 +1,11 @@
 package id.ifgl.uw.model;
 
+import id.ifgl.uw.constants.ModelConstant;
 import io.quarkus.mongodb.panache.PanacheMongoEntity;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import java.time.Instant;
 
-@MongoEntity(collection = "underwriting_decisions")
+@MongoEntity(collection = ModelConstant.UNDERWRITING_DECISIONS)
 public class UnderwritingDecision extends PanacheMongoEntity {
     public String applicationId;
     public double riskScore;
