@@ -1,5 +1,6 @@
 package id.ifgl.uw.kafka.consumer;
 
+import id.ifgl.uw.constants.TopicConstant;
 import id.ifgl.uw.dto.request.UnderwritingDecisionRequest;
 import id.ifgl.uw.service.DecisionEngine;
 import io.smallrye.reactive.messaging.kafka.Record;
@@ -12,7 +13,7 @@ public class UnderwritingDecisionConsumer {
     @Inject
     DecisionEngine decisionEngine;
 
-    @Incoming("underwriting-input")
+    @Incoming(TopicConstant.UW_IN)
     public void receive(Record<String, UnderwritingDecisionRequest> record) {
         decisionEngine.evaluate(record.value());
     }

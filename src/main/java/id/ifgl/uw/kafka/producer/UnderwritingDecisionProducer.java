@@ -1,5 +1,6 @@
 package id.ifgl.uw.kafka.producer;
 
+import id.ifgl.uw.constants.TopicConstant;
 import id.ifgl.uw.model.UnderwritingDecision;
 import io.smallrye.reactive.messaging.kafka.Record;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -10,7 +11,7 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 @ApplicationScoped
 public class UnderwritingDecisionProducer {
     @Inject
-    @Channel("underwriting-output")
+    @Channel(TopicConstant.UW_OUT)
     Emitter<Record<String, UnderwritingDecision>> emitter;
 
     public void send(UnderwritingDecision underwritingDecision) {
