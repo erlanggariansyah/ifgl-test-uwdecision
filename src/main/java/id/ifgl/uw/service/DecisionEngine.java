@@ -1,7 +1,7 @@
 package id.ifgl.uw.service;
 
 import id.ifgl.uw.constants.DecisionEnum;
-import id.ifgl.uw.dto.UnderwritingDecisionRequest;
+import id.ifgl.uw.dto.request.UnderwritingDecisionRequest;
 import id.ifgl.uw.kafka.producer.UnderwritingDecisionProducer;
 import id.ifgl.uw.model.UnderwritingDecision;
 import id.ifgl.uw.repository.UnderwritingDecisionRepository;

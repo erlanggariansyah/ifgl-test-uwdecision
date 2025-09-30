@@ -1,4 +1,4 @@
-package id.ifgl.uw.dto;
+package id.ifgl.uw.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

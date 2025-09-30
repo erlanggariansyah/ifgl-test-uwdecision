@@ -1,6 +1,6 @@
 package id.ifgl.uw.kafka.consumer;
 
-import id.ifgl.uw.dto.UnderwritingDecisionRequest;
+import id.ifgl.uw.dto.request.UnderwritingDecisionRequest;
 import id.ifgl.uw.service.DecisionEngine;
 import io.smallrye.reactive.messaging.kafka.Record;
 import jakarta.enterprise.context.ApplicationScoped;
