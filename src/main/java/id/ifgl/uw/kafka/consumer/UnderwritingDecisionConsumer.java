@@ -13,7 +13,7 @@ public class UnderwritingDecisionConsumer {
     DecisionEngine decisionEngine;
 
     @Incoming("underwriting-input")
-    public void receive(Record<Integer, UnderwritingDecisionRequest> record) {
+    public void receive(Record<String, UnderwritingDecisionRequest> record) {
         decisionEngine.evaluate(record.value());
     }
 }
