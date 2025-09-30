@@ -1,6 +1,7 @@
 package id.ifgl.uw.service;
 
-import id.ifgl.uw.constants.DecisionEnum;
+import id.ifgl.uw.constants.MessageConstant;
+import id.ifgl.uw.enumeration.DecisionEnum;
 import id.ifgl.uw.dto.request.UnderwritingDecisionRequest;
 import id.ifgl.uw.kafka.producer.UnderwritingDecisionProducer;
 import id.ifgl.uw.model.UnderwritingDecision;
@@ -47,13 +48,13 @@ public class DecisionEngine {
 
         if (underwritingDecision.riskScore <= 30) {
             underwritingDecision.decision = DecisionEnum.AUTO_APPROVE.name();
-            underwritingDecision.decisionReason = "Resiko rendah";
+            underwritingDecision.decisionReason = MessageConstant.RESIKO_RENDAH;
         } else if (underwritingDecision.riskScore <= 60) {
             underwritingDecision.decision = DecisionEnum.MANUAL_REVIEW.name();
-            underwritingDecision.decisionReason = "Resiko menengah";
+            underwritingDecision.decisionReason = MessageConstant.RESIKO_MENENGAH;
         } else {
             underwritingDecision.decision = DecisionEnum.DECLINE.name();
-            underwritingDecision.decisionReason = "Resiko tinggi";
+            underwritingDecision.decisionReason = MessageConstant.RESIKO_TINGGI;
         }
 
         underwritingDecision.processedAt = Instant.now();
