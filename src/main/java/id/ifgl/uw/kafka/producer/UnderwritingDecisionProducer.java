@@ -9,7 +9,6 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 
 @ApplicationScoped
 public class UnderwritingDecisionProducer {
-
     @Inject
     @Channel("underwriting-output")
     Emitter<Record<String, UnderwritingDecision>> emitter;
